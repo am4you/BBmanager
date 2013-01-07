@@ -1,19 +1,21 @@
-#1 Welcome to the new project signed by [am4you](http://www.am4you.net) #1
+# Welcome to BBmanager # 
 
-- - -
+BBmanager is the new project signed by [am4you](http://www.am4you.net)
 
-#1 Installation Guides #1
+-----------------
+
+# Installation Guides #
 
 + do something
 + do something
 
 * * *
 
-#1 To Do List #1
+# To Do List #
 
 + #1
 + #2
 
 * * *
 
-#1 Note #1
+# Note #
