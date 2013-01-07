@@ -15,6 +15,8 @@ group :assets do
   gem 'uglifier', '1.2.3'
 end
 
+gem 'devise'
+
 gem 'jquery-rails', '2.0.2'
 
 group :test do
