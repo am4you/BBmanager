@@ -1,14 +1,29 @@
 <%= form_for(resource, :html => { :class => "form-signin"}, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 <h2>Sign in</h2>
-  <div><%= f.email_field :email, :placeholder => "Email address", :class => "input-block-level" %></div>
+ 
 
-  <div><%= f.password_field :password, :placeholder => "Insert password", :class => "input-block-level"%></div>
+<div class="control-group">
+<div class="controls">
+   <%= f.email_field :email, :placeholder => "Email address", :class => "input-xlarge" %>
+</div>
+</div> 
 
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me, :class => "checkbox" %></div>
-  <% end -%>
+<div class="control-group">
+<div class="controls">
+   <%= f.password_field :password, :placeholder => "Password", :class => "input-xlarge" %>
+</div>
+</div>
 
-  <div><%= f.submit "Sign in", :class => "btn btn-large btn-primary" %></div>
-  <br>
-  <%= render "devise/shared/links" %>
+<div class="control-group">
+<div class="controls">
+  <label class="checkbox">
+    <% if devise_mapping.rememberable? -%>
+	  <%= f.check_box :remember_me %> Remember me
+		<% end -%>
+  </label>
+  <%= f.submit "Sign in", :class => "btn btn-large btn-primary" %>
+</div>
+</div>
+
+<%= render "devise/shared/links" %>
 <% end %>
