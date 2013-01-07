@@ -16,7 +16,7 @@ group :assets do
 end
 
 gem 'devise'
-gem 'bootstrap-sass', '2.1'
+gem 'bootstrap-sass'
 
 gem 'jquery-rails', '2.0.2'
 

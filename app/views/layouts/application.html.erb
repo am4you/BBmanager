@@ -17,8 +17,13 @@
           <nav>
             <ul class="nav pull-right">
               <li><%= link_to "Index",    '/' %></li>
-              <li><%= link_to "Help",    '#' %></li>
-              <li><%= link_to "Sign in", '#' %></li>
+              <li><%= link_to "Contact",    '#' %></li>
+              <% if user_signed_in? %>
+ 		      <li><%= link_to "#{current_user.email}", edit_user_registration_path %></li>
+              <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+              <% else %>
+              <li><%= link_to "Sign in", '/users/sign_in' %></li>
+              <% end %>
             </ul>
           </nav>
         </div>
