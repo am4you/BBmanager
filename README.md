@@ -1,6 +1,6 @@
 Welcome to the new project signed by [am4you](http://www.am4you.net)
 
-* * *
+- - -
 
 Installation Guides
 
