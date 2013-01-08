@@ -17,6 +17,7 @@ end
 
 gem 'devise'
 gem 'bootstrap-sass'
+gem 'tlsmail'
 
 gem 'jquery-rails', '2.0.2'
 
