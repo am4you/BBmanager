@@ -19,7 +19,7 @@
               <li><%= link_to "Index",    '/' %></li>
               <li><%= link_to "Contact",    '#' %></li>
               <% if user_signed_in? %>
- 		      <li><%= link_to "#{current_user.email}", edit_user_registration_path %></li>
+ 		          <li><%= link_to "#{current_user.email}", edit_user_registration_path %></li>
               <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
               <% else %>
               <li><%= link_to "Sign in", '/users/sign_in' %></li>
@@ -29,6 +29,10 @@
         </div>
       </div>
     </header>
+
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, :class => "#{name}" %>
+  <% end %>
 
     <div class="container">
       	<%= yield %>

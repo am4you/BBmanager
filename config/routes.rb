@@ -1,4 +1,7 @@
 BBmanager::Application.routes.draw do
+  resources :bbs
+
+
   devise_for :users
 
   get "static_pages/index"
