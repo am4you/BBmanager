@@ -5,34 +5,14 @@
     <%= stylesheet_link_tag    "application", media: "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <%= render 'layouts/shim' %>
   </head>
   <body>
-    <header class="navbar navbar-fixed-top navbar-inverse">
-      <div class="navbar-inner">
-        <div class="container">
-          <%= link_to "BBmanager", '/', id: "logo" %>
-          <nav>
-            <ul class="nav pull-right">
-              <li><%= link_to "Index",    '/' %></li>
-              <li><%= link_to "Contact",    '/static_pages/contact' %></li>
-              <% if user_signed_in? %>
- 		      <li><%= link_to "#{current_user.email}", edit_user_registration_path %></li>
-              <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
-              <% else %>
-              <li><%= link_to "Sign in", '/users/sign_in' %></li>
-              <% end %>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </header>
+    <%= render 'layouts/header' %>
 
     <div class="container">
       	<%= yield %>
-      	<%= debug(params) if Rails.env.development? %>
+        <%= render 'layouts/footer' %>
     </div>
   </body>
 </html>
