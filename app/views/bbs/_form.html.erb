@@ -12,43 +12,34 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.label "Name*" %> <%= f.text_field :name, :class => "input-xxlarge" %>
   </div>
-  <div class="field">
-    <%= f.label :address %><br />
-    <%= f.text_field :address %>
+  <fieldset>
+    <legend>Address: <small>*compulsory fields</small></legend>
+    <div class="field">
+    <%= f.label "Address*" %> <%= f.text_field :address, :class => "input-xxlarge" %>
   </div>
-  <div class="field">
-    <%= f.label :city %><br />
-    <%= f.text_field :city %>
+    <div class="row">
+    <div class="span4"><%= f.label "State*" %> <%= f.text_field :state %></div>
+    <div class="span4"><%= f.label "Area*" %> <%= f.text_field :area %></div>
   </div>
-  <div class="field">
-    <%= f.label :zipcode %><br />
-    <%= f.text_field :zipcode %>
+
+  <div class="row">
+    <div class="span4"><%= f.label "City*" %> <%= f.text_field :city %></div>
+    <div class="span4"><%= f.label "Zipcode*" %> <%= f.text_field :zipcode %></div>
   </div>
-  <div class="field">
-    <%= f.label :area %><br />
-    <%= f.text_field :area %>
+
+  <div class="row">
+    <div class="span4"> <%= f.label "Phone*" %> <%= f.text_field :phone %></div>
+    <div class="span4"><%= f.label :fax %> <%= f.text_field :fax %></div>
   </div>
-  <div class="field">
-    <%= f.label :state %><br />
-    <%= f.text_field :state %>
-  </div>
-  <div class="field">
-    <%= f.label :phone %><br />
-    <%= f.text_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.label :fax %><br />
-    <%= f.text_field :fax %>
-  </div>
-  <div class="field">
-    <%= f.label :web %><br />
-    <%= f.text_field :web %>
+  </fieldset>
+
+    <div class="field">
+    <%= f.label "Web site" %> <%= f.text_field :web %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Update b&b", :class => "btn btn-large btn-primary" %>
   </div>
 <% end %>

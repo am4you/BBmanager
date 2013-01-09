@@ -1,48 +1,27 @@
+<div class="row">
+<div class="span4">foto</div>
+<div class="span4">
+<h3><%= @bb.name %></h3>
 
-<p>
-  <b>Name:</b>
-  <%= @bb.name %>
-</p>
+<%= @bb.address %><br/>
 
-<p>
-  <b>Address:</b>
-  <%= @bb.address %>
-</p>
+<%= @bb.zipcode %> <%= @bb.city %> <%= @bb.area %><br/> 
 
-<p>
-  <b>City:</b>
-  <%= @bb.city %>
-</p>
+<%= @bb.state %><br/> 
 
-<p>
-  <b>Zipcode:</b>
-  <%= @bb.zipcode %>
-</p>
+<b>Phone:</b>
+<%= @bb.phone %><br/> 
 
-<p>
-  <b>Area:</b>
-  <%= @bb.area %>
-</p>
+<b>Fax:</b>
+<%= @bb.fax %><br/> 
 
-<p>
-  <b>State:</b>
-  <%= @bb.state %>
-</p>
+<%= link_to "#{@bb.web}", @bb.web %>
 
-<p>
-  <b>Phone:</b>
-  <%= @bb.phone %>
-</p>
-
-<p>
-  <b>Fax:</b>
-  <%= @bb.fax %>
-</p>
-
-<p>
-  <b>Web:</b>
-  <%= @bb.web %>
-</p>
+<br/> 
+<br/> 
 
 <%= link_to 'Edit', edit_bb_path(@bb) %> |
 <%= link_to 'Back', bbs_path %>
+
+</div>
+</div>
