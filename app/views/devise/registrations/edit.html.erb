@@ -5,6 +5,20 @@
 <%= devise_error_messages! %>
 
 <div class="control-group">
+<div class="controls">
+  <%= f.label :name %>
+   <%= f.text_field :name, :placeholder => "Insert name", :class => "input-xlarge" %>
+</div>
+</div>
+
+<div class="control-group">
+<div class="controls">
+  <%= f.label :surname %>
+   <%= f.text_field :surname, :placeholder => "Insert surname", :class => "input-xlarge" %>
+</div>
+</div>
+
+<div class="control-group">
   <div class="controls">
     <%= f.label :email %>
     <%= f.email_field :email %>
