@@ -50,6 +50,6 @@ BBmanager::Application.configure do
     :domain => "gmail.com",
     :authentication => :login,
     :user_name => "info@am4you.net",
-    :password => "PASSWORD_HERE",
+    :password => "magerose82",
   }
 end
