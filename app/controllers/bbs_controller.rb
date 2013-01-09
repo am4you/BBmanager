@@ -49,6 +49,7 @@ class BbsController < ApplicationController
 
     respond_to do |format|
       if @bb.save
+        flash.discard
         format.html { redirect_to @bb, notice: 'Bb was successfully created.' }
         format.json { render json: @bb, status: :created, location: @bb }
       else
