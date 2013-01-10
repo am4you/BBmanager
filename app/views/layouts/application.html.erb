@@ -10,13 +10,13 @@
   <body>
     <%= render 'layouts/header' %>
 
-  <% flash.each do |name, msg| %>
-    <%= content_tag :div, msg, :class => "#{name}" %>
-  <% end %>
-
     <div class="container">
-      	<%= yield %>
-        <%= render 'layouts/footer' %>
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :class => "#{name}" %>
+      <% end %>
+      
+    	<%= yield %>
+      <%= render 'layouts/footer' %>
     </div>
   </body>
 </html>

@@ -1,21 +1,27 @@
 <div class="row">
-<div class="span4">foto</div>
+<div class="span4">
+photo profile
+</div>
 <div class="span4">
 <h3><%= @bb.name %></h3>
 
 <%= @bb.address %><br/>
 
-<%= @bb.zipcode %> <%= @bb.city %> <%= @bb.area %><br/> 
+<%= @bb.zipcode %> <%= @bb.city %>, <%= @bb.area %><br/> 
 
 <%= @bb.state %><br/> 
 
 <b>Phone:</b>
 <%= @bb.phone %><br/> 
 
+<% if !@bb.fax.blank? %>
 <b>Fax:</b>
 <%= @bb.fax %><br/> 
+<% end %>
 
+<% if !@bb.web.blank? %>
 <%= link_to "#{@bb.web}", @bb.web %>
+<% end %>
 
 <br/> 
 <br/> 

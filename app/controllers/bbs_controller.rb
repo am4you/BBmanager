@@ -86,4 +86,8 @@ class BbsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def my_bb
+    redirect_to (current_user.bb || new_bb_path)
+  end
 end

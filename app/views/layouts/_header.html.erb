@@ -6,28 +6,19 @@
             <ul class="nav pull-right">
               <li><%= link_to "Index",    '/' %></li>
               <li><%= link_to "Contact",    '/static_pages/contact' %></li>
-              <% if user_signed_in? %>
-                <% if current_user.name.blank? && current_user.surname.blank? %>
+              <% if user_signed_in? %> 
                 <li>
-                    <%= link_to "#{current_user.email}", "#",
-                    :class => "dropdown-toggle", :data => {:toggle => "dropdown"} %>
+                    <% if current_user.name.blank? && current_user.surname.blank? %>
+                    <%= link_to "#{current_user.email}", "#", :class => "dropdown-toggle", :data => {:toggle => "dropdown"} %>
+                    <% else %>
+                    <%= link_to "#{current_user.name} #{current_user.surname}", "#", :class => "dropdown-toggle", :data => {:toggle => "dropdown"} %>
+                    <% end %>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                    <li><%= link_to "Update profile", edit_user_registration_path %></li>
+                    <li><%= link_to "Edit profile", edit_user_registration_path %></li>
+                    <% if current_user.bb %><li><%= link_to "my B&B", my_bb_bbs_path(@bb) %></li> <% end %>
                     <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
                     </ul>
                 </li>
-                <% else %>
-                <li>
-                  <!--<div class="dropdown">-->
-                    <%= link_to "#{current_user.name} #{current_user.surname}", "#", 
-                    :class => "dropdown-toggle", :data => {:toggle => "dropdown"} %>
-                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                    <li><%= link_to "Update profile", edit_user_registration_path %></li>
-                    <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
-                    </ul>
-                  <!--</div>-->
-                  </li>
-                  <% end %>
               <% else %>
               <li><%= link_to "Sign in", '/users/sign_in' %></li>
               <% end %>

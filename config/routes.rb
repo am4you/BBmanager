@@ -1,5 +1,9 @@
 BBmanager::Application.routes.draw do
-  resources :bbs
+    resources :bbs do 
+    collection do 
+      get 'my_bb'
+    end
+  end
 
 
   devise_for :users
