@@ -14,16 +14,9 @@
   <%= f.label :surname %>
    <%= f.text_field :surname, :placeholder => "Insert surname", :class => "input-xlarge" %>
 </div>
-</div>
-
-<div class="row">
-  <div class="span4">
+<div class="span4">
     <%= f.label :email %>
     <%= f.email_field :email %>
-  </div>
-  <div class="span4">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
   </div>
 </div>
 
@@ -32,13 +25,17 @@
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i>
     <%= f.password_field :password, :autocomplete => "off" %>
   </div>
+    <div class="span4">
+    <%= f.label :password_confirmation %><i>(confirm your password)</i>
+    <%= f.password_field :password_confirmation %>
+  </div>
   <div class="span4">
     <%= f.label :current_password %> <i>(your current password to confirm all)</i><br />
     <%= f.password_field :current_password %>
   </div>
 </div>
-
-  <div><%= f.submit "Update", :class => "btn btn-large btn-primary" %></div><br>
+<br>
+  <div align="center"><%= f.submit "Edit my profile", :class => "btn btn-large btn-primary" %></div><br>
 </fieldset>
 
 <fieldset>
