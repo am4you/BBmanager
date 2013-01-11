@@ -18,6 +18,8 @@ end
 gem 'devise'
 gem 'bootstrap-sass'
 gem 'tlsmail'
+gem 'carrierwave'
+gem 'rmagick'
 
 gem 'jquery-rails', '2.0.2'
 

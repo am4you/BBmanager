@@ -1,4 +1,4 @@
-<%= form_for(@bb) do |f| %>
+<%= form_for @bb, :html => {:multipart => true} do |f| %>
   <% if @bb.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@bb.errors.count, "error") %> prohibited this bb from being saved:</h2>
@@ -35,9 +35,19 @@
   </div>
   </fieldset>
 
-    <div class="field">
+  <div class="row">
+    <div class="span4">
     <%= f.label "Web site" %> <%= f.text_field :web, :placeholder => 'http://www.example.com' %>
   </div>
+  <div class="span4">
+    <%= f.label "Avatar" %>
+    <%= f.file_field :image %>
+  </div>
+  <div class="span4">
+    <%= f.label :remote_image_url, "or image URL"  %>
+    <%= f.text_field :remote_image_url %>
+  </div>
+</div>
 
   <div class="actions">
     <%= f.submit "Update b&b", :class => "btn btn-large btn-primary" %>

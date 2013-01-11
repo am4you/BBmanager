@@ -1,5 +1,5 @@
 class Bb < ActiveRecord::Base
-  attr_accessible :address, :area, :city, :fax, :name, :phone, :state, :web, :zipcode
+  attr_accessible :address, :area, :city, :fax, :name, :phone, :state, :web, :zipcode, :image, :remote_image_url
   validates(:name, :address, :city, :zipcode, :area, :state, :phone, presence: true)
   validates_numericality_of :zipcode, :phone
   validates_numericality_of :fax, :allow_blank => true
@@ -12,4 +12,5 @@ class Bb < ActiveRecord::Base
   	errors.add(:zipcode, "Format not valid") unless zipcode.to_s.length == 5
   end
 
+  mount_uploader :image, ImageUploader
 end
