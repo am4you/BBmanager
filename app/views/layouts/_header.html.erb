@@ -14,9 +14,10 @@
                     <%= link_to "<i class = 'icon-user icon-white'></i> #{current_user.name} #{current_user.surname}".html_safe, "#", :class => "dropdown-toggle", :data => {:toggle => "dropdown"} %>
                     <% end %>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                    <li><%= link_to "Edit profile", edit_user_registration_path %></li>
-                    <% if current_user.bb %><li><%= link_to "my B&B", my_bb_bbs_path(@bb) %></li> <% end %>
-                    <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+                    <li><%= link_to "<i class='icon-edit'></i> Edit profile".html_safe, edit_user_registration_path %></li>
+                    <% if current_user.bb %><li><%= link_to "<i class='icon-glass'></i> my B&B".html_safe, my_bb_bbs_path(@bb) %></li> <% end %>
+                    <li class="divider"></li>
+                    <li><%= link_to "<i class='icon-ban-circle'></i> Sign out".html_safe, destroy_user_session_path, :method => :delete %></li>
                     </ul>
                 </li>
               <% else %>
