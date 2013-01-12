@@ -4,14 +4,14 @@
           <%= link_to "BBmanager", '/', id: "logo" %>
           <nav>
             <ul class="nav pull-right">
-              <li><%= link_to "Index",    '/' %></li>
-              <li><%= link_to "Contact",    '/static_pages/contact' %></li>
+              <li><%= link_to "<i class = 'icon-home icon-white'></i> Index".html_safe,    '/' %></li>
+              <li><%= link_to "<i class = 'icon-envelope icon-white'></i> Contact".html_safe,    '/static_pages/contact' %></li>
               <% if user_signed_in? %> 
                 <li>
                     <% if current_user.name.blank? && current_user.surname.blank? %>
                     <%= link_to "#{current_user.email}", "#", :class => "dropdown-toggle", :data => {:toggle => "dropdown"} %>
                     <% else %>
-                    <%= link_to "#{current_user.name} #{current_user.surname}", "#", :class => "dropdown-toggle", :data => {:toggle => "dropdown"} %>
+                    <%= link_to "<i class = 'icon-user icon-white'></i> #{current_user.name} #{current_user.surname}".html_safe, "#", :class => "dropdown-toggle", :data => {:toggle => "dropdown"} %>
                     <% end %>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
                     <li><%= link_to "Edit profile", edit_user_registration_path %></li>
